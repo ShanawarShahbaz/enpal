@@ -5,9 +5,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains
 import time
-
+import os
 PATH=("C:\Program Files (x86)\chromedriver.exe")
 driver=webdriver.Chrome(PATH)
+cwd_path=os.getcwd()
+print(">>>>>>>",cwd_path,"<<<<<<<")
 
 # create action chain object
 action = ActionChains(driver)
@@ -55,6 +57,9 @@ def submit_button(path):
     arrow=driver.find_element_by_xpath(path)
     arrow.send_keys(Keys.ENTER)
 
+def click(path):
+    arrow=driver.find_element_by_xpath(path)
+    arrow.click()
 
 #Test Case-1 - Sanity Check - Loading the dynamic0slider-staging.azurewebsites.net
 homepage() 
@@ -190,3 +195,25 @@ upload_picture(element_path,picture_path_1)
 upload_picture(element_path,picture_path_2)
 
 upload_picture(element_path,picture_path_3)
+
+
+#/html/body/div/div[1]/div[2]/ol/li/a
+#//A[@data-testid='next-step']
+#phone_reminder_path='//INPUT[@id="reminder-input"]'
+#phone_number_reminder="1797266549"
+# fill_form(phone_reminder_path,phone_number_reminder)
+
+#---submit phone number for reminder
+time.sleep(3)
+submit_button('//BUTTON[@type="submit"]')
+#time.sleep(2)
+click('//A[@data-testid="next-step"]')
+
+#---House with surrouding----
+
+element_path="/html/body/div[1]/div[1]/div[1]/div/div/div[2]/div/div[3]/div/form/input[@type='file']"
+picture_path_1="D:\\enpal\\a.jpg"
+picture_path_2="D:\\enpal\\b.png"
+picture_path_3="D:\\enpal\\script.sql"
+upload_picture(element_path,picture_path_1)
+upload_picture(element_path,picture_path_2)
