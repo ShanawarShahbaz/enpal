@@ -17,7 +17,7 @@ Company :     Enpal
 ''' IMPORTANT : This automation script test multiple test case with different scenarios
 
 1. verify that user is able  to write contact detail and submit them.
-2. verify that user is able  to upload house roof pictures( 10) with different picture types .png / .jpeg
+2. verify that user is able  to upload house roof pictures( 10) , Surrounding picture , Meter Pictures and electricity bill pictures with different types i.e .png / .jpeg
 3. verify that user is able  to receieve a reminder link on his phone number 
 4. verify  that user,s  data  is submitted successfully  
 '''
@@ -31,7 +31,8 @@ roof_path=arrow ='//div[@data-testid="label-container" and @class="SingleAnswer_
 enp.roof_type(roof_path)
 
 #---------------Dachfenter -JA---------------------------------------------
-enp.ja()
+answer_type_path='//div[@data-testid="label-container" and @class="SingleAnswer_AnswerLabelContainer__316pD"]'
+enp.fenster_type(answer_type_path)
 
 #-------------Personen leben->  1-2------------------------------------------
 family_path='//div[@data-testid="label-container" and @class="SingleAnswer_AnswerLabelContainer__316pD"]'
@@ -39,7 +40,7 @@ enp.family_size(family_path)
 
 #--------------electricity|Morgen_evening-------------------------------------
 enp.time_path='//div[@data-testid="answer" and @class="SingleAnswer_Answer__sWhX8"]'
-enp.dayenp.time(enp.time_path)
+enp.daytime(enp.time_path)
 
 #--------------Eigentümer des Hauses--->Nein-----------------------------------
 house_path='((//DIV[@data-testid="label-container"])[1]/../../..//DIV[@data-testid="label-container"])[2]'
@@ -99,8 +100,8 @@ print(">>>>>>>>>>>>>>>>>>>>>>>>>",are_you_sure)
 enp.time.sleep(1)
 enp.click('(//DIV[@data-testid="label-container"])[2]')
 
-#------------------------------------------------------------------------------------------------------------------------------------
-#check : are you 70 or under 70 ?
+
+#---Agecheck : are you 70 or under 70------?
 #--above_70()
 age_path='(//DIV[@data-testid="label-container"])[2]'
 enp.age_check(age_path)
@@ -138,19 +139,13 @@ element_path="/html/body/div[1]/div[1]/div[1]/div/div/div[2]/div/div[3]/div/form
 picture_path_1="D:\\enpal\\a.jpg"
 picture_path_2="D:\\enpal\\b.png"
 picture_path_3="D:\\enpal\\script.sql"
-enp.upload_picture(element_path,picture_path_1)
-enp.upload_picture(element_path,picture_path_2)
-enp.upload_picture(element_path,picture_path_2)
-enp.upload_picture(element_path,picture_path_1)
-enp.upload_picture(element_path,picture_path_2)
-enp.upload_picture(element_path,picture_path_2)
-enp.upload_picture(element_path,picture_path_1)
-enp.upload_picture(element_path,picture_path_2)
-
 enp.upload_picture(element_path,picture_path_3)
+for x in range(3):
+   enp.upload_picture(element_path,picture_path_1)
+   enp.upload_picture(element_path,picture_path_2)
 
 #---submit phone number for reminder
-enp.time.sleep(3)
+enp.time.sleep(5)
 enp.submit_button('//BUTTON[@type="submit"]')
 enp.click('//A[@data-testid="next-step"]')
 
