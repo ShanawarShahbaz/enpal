@@ -9,6 +9,31 @@ Company :     Enpal
 import enpal_defination as enp
 import os
 
+
+#----------------------------------------Test Case *navigation path*-----------------------------
+#Flachdach 
+#->Dachfenster              |Nein
+#->Personen leben           |1-2
+#->electricity              |Morgen&abends
+#->Eigentümer des Hauses    |Nein
+#->ZipCode                  |12345
+#ContactForm 
+        #NAME :    "abcefghijklmnoooooooooppppppppppp@ @xyzzzzzzzzzzzzzzzzzzzzz"
+        #Address:  "alexnder plazt strasse 23 12581 berlin"
+        #phone :   "+491797266549"
+        #email:    "shan@mail.com"
+#-> Personen stehen     | 2-personen
+#click on above 70  
+#Then click on below 70
+#House description with Maximum number of characters | 250 characters
+#Enter reminder phone number and get link on phone   | 1797266549
+#upload dachflahen photos                            | 5 phots .jpeg,.png and sql script file
+#upload house surrouding pictures                    | 2 phots .jpeg ,.png
+#upload meter pictures                               | 2 phots .jpeg ,.png
+#upload electricity bill pictures                    | 2 phots .jpeg ,.png
+#Finish
+#------------------------------------------------------------------------------------------------------------
+
 #--------Test Case-1 - Sanity Check - Loading the dynamic0slider-staging.azurewebsites.net----------
 enp.homepage() 
 
