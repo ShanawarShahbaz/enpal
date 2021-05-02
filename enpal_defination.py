@@ -6,18 +6,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains
 import time
 import os
+
+#print(">>>>>>>",cwd_path,"<<<<<<<")
 PATH=("C:\Program Files (x86)\chromedriver.exe")
 driver=webdriver.Chrome(PATH)
 cwd_path=os.getcwd()
-print(">>>>>>>",cwd_path,"<<<<<<<")
 
-# create action chain object
-action = ActionChains(driver)
-
-def ja():
-    #Test Case -Nein
+def fenster_type(path):
     time.sleep(1)
-    arrow = driver.find_element_by_xpath('//div[@data-testid="label-container" and @class="SingleAnswer_AnswerLabelContainer__316pD"]')
+    arrow = driver.find_element_by_xpath(path)
     arrow.click()
 
 def roof_type(path):
@@ -60,7 +57,7 @@ def submit_button(path):
 def click(path):
     arrow=driver.find_element_by_xpath(path)
     arrow.click()
-    
+
 def upload_picture(element_path,local_picture_path):
     s = driver.find_element_by_xpath(element_path)
     s.send_keys(local_picture_path)
