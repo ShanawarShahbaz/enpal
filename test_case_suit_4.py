@@ -116,14 +116,14 @@ enp.time.sleep(1)
 goto_picuters_path='//BUTTON[@data-testid="submit"]'
 enp.submit_button(goto_picuters_path)
 
-#-----start uploading pictueing from local dir
+#-----start uploading pictures from local dir
 element_path="/html/body/div[1]/div[1]/div[1]/div/div/div[2]/div/div[3]/div/form/input[@type='file']"
 picture_path_1="D:\\enpal\\a.jpg"
 picture_path_2="D:\\enpal\\b.png"
 picture_path_3="D:\\enpal\\script.sql"
 enp.upload_picture(element_path,picture_path_1)
 enp.upload_picture(element_path,picture_path_2)
-# enp.upload_picture(element_path,picture_path_3)
+#enp.upload_picture(element_path,picture_path_3)
 
 
 
@@ -162,16 +162,16 @@ element_path="/html/body/div[1]/div[1]/div[1]/div/div/div[2]/div/div[3]/div/form
 picture_path_1="D:\\enpal\\a.jpg"
 picture_path_2="D:\\enpal\\b.png"
 # picture_path_3="D:\\enpal\\script.sql"
-# enp.upload_picture(element_path,picture_path_1)
-# enp.upload_picture(element_path,picture_path_2)
-enp.time.sleep(1)
+enp.upload_picture(element_path,picture_path_1)
+enp.upload_picture(element_path,picture_path_2)
+enp.time.sleep(2)
 enp.click('//A[@data-testid="next-step"]')
 
 #------electric city bill pictures-------
 element_path="/html/body/div[1]/div[1]/div[1]/div/div/div[2]/div/div[3]/div/form/input"
 picture_path_1="D:\\enpal\\a.jpg"
 picture_path_2="D:\\enpal\\b.png"
-picture_path_3="D:\\enpal\\script.sql"
+#picture_path_3="D:\\enpal\\script.sql"
 enp.upload_picture(element_path,picture_path_1)
 enp.upload_picture(element_path,picture_path_2)
 enp.click('//A[@data-testid="next-step"]')
