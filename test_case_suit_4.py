@@ -1,14 +1,39 @@
-#to -doverify that after uploading the of surrounding ,user can go back and delete one of the pictures
-#to do user other navigation path
-
+#TEST-CASE :verify that after uploading the of surrounding pictures ,user can go back and delete one of the pictures and then move forward until finish.
 ''' 
-TestCase No : 3
+TestCase No : 4
 Written by  : SHANAWAR 
 Version     : v1.0
 Last modified date : 30.04. 27
 Company :     Enpal 
 '''
 #------------------------------------------------------------
+
+#----------------------------------------Test Case *navigation path*-----------------------------
+#Flachdach 
+#->Dachfenster              |Nein
+#->Personen leben           |1-2
+#->electricity              |Morgen&abends
+#->Eigentümer des Hauses    |Nein
+#->ZipCode                  |12345
+
+#ContactForm 
+        #NAME :    "abcefghijklmnoooooooooppppppppppp@ @xyzzzzzzzzzzzzzzzzzzzzz"
+        #Address:  "alexnder plazt strasse 23 12581 berlin"
+        #phone :   "+491797266549"
+        #email:    "shan@mail.com"
+
+#-> Personen stehen     | 2-personen
+#first click on above 70 , then click on below 70
+
+#house description with Maximum number of characters    | only one character
+
+#Enter reminder phone number and get link on phone      | 1797266549
+#upload dachflahen photos 6 including a .jpeg,.png and sql script file
+#upload house surrouding pictures 2
+#upload meter pictures 2
+#upload electricity bill pictures 2
+#Finish
+#------------------------------------------------------------------------------------------------------------
 
 import enpal_defination as enp
 import os
@@ -53,6 +78,7 @@ name_x='1223!@ 4_@!56789'
 enp.fill_form(name_path,name_x)
 
 #----- writting address---------
+enp.time.sleep(1)
 address_path='//input[@name="address"]'
 address_x="alexnder plazt strasse 23 12581 berlin"
 enp.fill_form(address_path,address_x)
@@ -72,7 +98,7 @@ contact_form_button_path='//BUTTON[@data-testid="submit"]'
 enp.submit_button(contact_form_button_path)
 
 #-----wait for script to run to submit contact details form----
-enp.time.sleep(4)
+enp.time.sleep(5)
 weiter_path='//BUTTON[@data-testid="submit"][text()="Weiter"]'
 enp.submit_button(weiter_path)
 
