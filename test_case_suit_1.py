@@ -8,10 +8,33 @@ Company :     Enpal
 '''
 
 #--------------------------------Naviaton flow----------------------------
-#SattelDach -> Dachfenster|JA -> Personen leben|1-2 -> electricity|Morgen_evening -> Eigentümer des Hauses|Nein -> zipCode -> submit zip_code
-#writing_contact_Details-> submit_contact_detai -> Personen stehen 3 ->Personen stehen 2 ->unter 70 Jahre alt_ above 70 
-#-> unter 70 Jahre alt _below 70 -> enter_house_description-> weaiter/Next -> upload photos for roof and giving phone number_reminder 
-# ->upload surrounding ->upload meter pictures  -> upload electricity bill ->finsish
+#->SattelDach  
+#->Dachfenster    | JA  
+#->Personen leben | 1-2 
+#->electricity    | Morgen_evening  
+#->Eigentümer des Hauses | Nein 
+#->zipCode | "12345" 
+#->submit zip_code 
+#writing_contact_Details-> 
+   #ContactForm 
+        #NAME :   "abc 123"
+        #Address: "alexnder plazt strasse 23 12581 berlin"
+        #phone :   "+491797266549"
+        #email: "shan@mail.com"
+
+# submit_contact_detail 
+#-> Personen stehen     | 3 
+#->Personen stehen      | 2 
+#->unter 70 Jahre alt_  | above 70 
+#->unter 70 Jahre alt _ |below 70 
+#->enter_house_description
+#->weaiter/Next 
+#->upload photos for roof 
+#->writting phone number for reminder | 1797266549
+#->upload surrounding pictures
+#->upload meter pictures  
+#->upload electricity bill 
+# >finish
 
 
 ''' IMPORTANT : This automation script test multiple test case with different scenarios
